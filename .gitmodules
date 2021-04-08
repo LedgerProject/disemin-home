@@ -1,0 +1,18 @@
+[submodule "smart-contract"]
+	path = smart-contract
+	url = git@github.com:exmgr/smart-contract.git
+[submodule "ipfs-middleware"]
+	path = ipfs-middleware
+	url = git@github.com:exmgr/exm-ipfs-middleware.git
+[submodule "disemin-android"]
+	path = disemin-android
+	url = git@github.com:exmgr/disemin-android.git
+[submodule "disemin-thingsboard-middleware"]
+	path = disemin-thingsboard-middleware
+	url = git@github.com:exmgr/disemin-thingsboard-middleware.git
+[submodule "exm-iot-node"]
+	path = exm-iot-node
+	url = git@github.com:exmgr/EXM-IoT-Node.git
+[submodule "ipfs-client-esp32"]
+	path = ipfs-client-esp32
+	url = git@github.com:exmgr/ipfs-client-esp32.git
