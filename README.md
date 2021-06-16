@@ -9,6 +9,7 @@ DISEMIN project aspires to build a DLT enabled IoT solution that addresses typic
 3. **Middleware for IoT PaaS** API abstraction and enhancement 
 4. **Middleware for IPFS** file organizing and **CHAINLINK** oracle adapter
 5. **Android mobile application** front-end for the end user / farmer
+6. **Web application** front-end for the end user / farmer
 
 ## Architecture
 
@@ -123,3 +124,9 @@ More details in the [smart-contract](https://github.com/exmgr/smart-contract) re
 The DISEMIN Android mobile application is the field front-end for the farmer, enabling easy access to crop data (e.g. actual weather condition from sensors, and weather forecast). In the future, it's functionality will be extended to facilitate data sharing across stakeholders (farmers, unions, agronomist, or any interested 3rd party).
 
 More details in the [disemin-android](https://github.com/exmgr/disemin-android) repo.
+
+## 6. Web application
+
+The DISEMIN web application is a react front-end application for the farmer, allowing for the creation of a parametric insurance contract on Ethereum, based on weather conditions acquired from IPFS through our Chainlink node.
+
+More details in the [agroxm-frontend](https://github.com/exmgr/agroxm-frontend) repo.
