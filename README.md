@@ -1,6 +1,8 @@
 ## DISEMIN
 
-DISEMIN project aspires to build a DLT enabled IoT solution that addresses typical precision agriculture requirements, with open source technologies and emphasis on data sovereignty. Farmer uses a mobile application to visualize crop & weather data produced via our DLT compatible IoT sensor node hardware, making sensor data directly accessible to blockchain smart contracts, enabling services such as parametric weather crop insurance or data sales to be conducted in an economic and trustless manner.
+DISEMIN project aspires to build a DLT enabled IoT solution that addresses typical precision agriculture requirements, with open source technologies and emphasis on data sovereignty.
+The farmer uses a mobile application to visualize crop & weather data produced via our DLT compatible IoT sensor node hardware, making sensor data directly accessible to blockchain smart contracts, enabling services such as parametric weather crop insurance or data sales to be conducted in an economic and trustless manner.
+
 
 ## Core components
 
@@ -9,11 +11,13 @@ DISEMIN project aspires to build a DLT enabled IoT solution that addresses typic
 3. **Middleware for IoT PaaS** API abstraction and enhancement 
 4. **Middleware for IPFS** file organizing and **CHAINLINK** oracle adapter
 5. **Android mobile application** front-end for the end user / farmer
-6. **Web application** front-end for the end user / farmer
+6. **Smart Contract Factory / Marketplace** with basic web frontend application for creating parametric weather insurance contracts
+
 
 ## Architecture
 
 ![Architecture](./media/architecture.jpg)
+
 
 ## 1. IoT sensor node
 
@@ -63,6 +67,7 @@ IPFS, being a novel web 3.0 open-source technology, did not have libraries for m
 
 A powerful device management takes place via thingsboard "shared attributes" controlled by a custom thingsboard widget. This approach enables for user-friendly remote device filesystem format, reboot, rtc sync, sensor on/off, and firmware OTA.
 
+
 ## 2. IoT PaaS
 
 [Thingsboard](https://github.com/thingsboard/thingsboard) is used as the core of the admin backend and (optional) end-user front-end. All sensor telemetry, and customer entities are defined here. This includes customer credentials, abstract assets such as farms, devices etc.  
@@ -70,6 +75,7 @@ A powerful device management takes place via thingsboard "shared attributes" con
 Custom widgets and rules extend the functionality of thinsboard to enhance the communication with the hardware node and achieve project goals. 
 
 More details in the [thingsboard-assets](https://github.com/exmgr/exm-iot-node-thingsboard-assets) repo.
+
 
 ## 3. IoT PaaS middleware
 
@@ -80,6 +86,7 @@ To extent Thingsboard's functionality, a Java Sprint middleware has been develop
 - Expose a custom API to mobile clients
 
 More details in the [disemin-thingsboard-middleware](https://github.com/exmgr/disemin-thingsboard-middleware/) repo.
+
 
 ## 4. IPFS middleware / file organizer
 
@@ -113,11 +120,6 @@ A running Chainlink node is required to create a bridge named "weather", pointin
 
 More details in the [smart-contract](https://github.com/exmgr/smart-contract) repo.
 
-### 4.4 Solidity contract example
-
-We have developed a proof of concept smart contract, for a theoretical parametric weather insurance on Ethereum blockchain.  The solidity contract obtains the latest Wind Gust parameter from IPFS via CHAINLINK oracle adapter.
-
-More details in the [smart-contract](https://github.com/exmgr/smart-contract) repo.
 
 ## 5. Android mobile app
 
@@ -125,8 +127,30 @@ The DISEMIN Android mobile application is the field front-end for the farmer, en
 
 More details in the [disemin-android](https://github.com/exmgr/disemin-android) repo.
 
-## 6. Web application
+
+## 6.Smart Contracts Factory / Marketplace
 
 The DISEMIN web application is a react front-end application for the farmer, allowing for the creation of a parametric insurance contract on Ethereum, based on weather conditions acquired from IPFS through our Chainlink node.
 
-More details in the [agroxm-frontend](https://github.com/exmgr/agroxm-frontend) repo.
+More details in the [smart-contract](https://github.com/exmgr/smart-contract) repo.
+
+
+# Demo
+
+A demo setup of the AgroXM solution has been deployed for the sake of the Ledger project.
+
+- The IoT PaaS is running here: [http://agro.exm.gr:9090](http://agro.exm.gr:9090)
+
+- The IoT PaaS middleware application is running here: [http://agro.exm.gr:3000](http://agro.exm.gr:3000/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/)
+
+- The IPFS middleware API is running here: [http://agro.exm.gr:3001](http://agro.exm.gr:3001/)
+
+- The smart contracts factory frontend application is running here: [http://agro.exm.gr](http://agro.exm.gr)
+
+- You can find binary apk files of the Android app on the repo's [releases page](https://github.com/exmgr/disemin-android/releases). You can also subscribe to Firebase distribution [here](https://appdistribution.firebase.dev/i/eb2c04a656c76602) in order to receive future app updates. The demo credentials for logging in the android app (or the IoT platform) are:
+
+```
+username = demo@exm.gr
+password = demo123
+```
+
